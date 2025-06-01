@@ -276,25 +276,53 @@ class _CleaningPageState extends State<CleaningPage> {
                   spacing: 8,
                   children: [
                     ChoiceChip(
-                      label: const Text("Week 1"),
+                      label: Text(
+                        "Week 1",
+                        style: TextStyle(
+                          color:
+                              selectedWeek == "Week 1"
+                                  ? Colors.white
+                                  : Colors.black,
+                        ),
+                      ),
                       selected: selectedWeek == "Week 1",
+                      selectedColor: Colors.deepPurple,
                       onSelected:
                           (_) => setState(() => selectedWeek = "Week 1"),
                     ),
                     ChoiceChip(
-                      label: const Text("Week 2"),
+                      label: Text(
+                        "Week 2",
+                        style: TextStyle(
+                          color:
+                              selectedWeek == "Week 2"
+                                  ? Colors.white
+                                  : Colors.black,
+                        ),
+                      ),
                       selected: selectedWeek == "Week 2",
+                      selectedColor: Colors.deepPurple,
                       onSelected:
                           (_) => setState(() => selectedWeek = "Week 2"),
                     ),
                     ChoiceChip(
-                      label: const Text("Week 3"),
+                      label: Text(
+                        "Week 3",
+                        style: TextStyle(
+                          color:
+                              selectedWeek == "Week 3"
+                                  ? Colors.white
+                                  : Colors.black,
+                        ),
+                      ),
                       selected: selectedWeek == "Week 3",
+                      selectedColor: Colors.deepPurple,
                       onSelected:
                           (_) => setState(() => selectedWeek = "Week 3"),
                     ),
                   ],
                 ),
+
                 const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,
