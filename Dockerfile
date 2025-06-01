@@ -1,6 +1,6 @@
 
 # Stage 1: Use the official Flutter image to build the app
-FROM cirrusci/flutter:3.7.12
+FROM cirrusci/flutter:3.7.12 As build
 
 WORKDIR /app
 
