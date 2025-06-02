@@ -1,10 +1,13 @@
-FROM cirrusci/flutter:3.7.0 AS build
-
-WORKDIR /app
-COPY . .
-RUN flutter pub get
-RUN flutter build web
-
+# Use Nginx to serve Flutter Web
 FROM nginx:alpine
-COPY --from=build /app/build/web /usr/share/nginx/html
+
+# Remove default Nginx HTML content
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy Flutter web build files to Nginx directory
+COPY build/web /usr/share/nginx/html
+
+# Expose port 80
 EXPOSE 80
+
+# Start Nginx (already CMD in base image)
