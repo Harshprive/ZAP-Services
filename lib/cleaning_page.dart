@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:zap_services/find_services.dart';
 
 class CleaningPage extends StatefulWidget {
   final bool showSidebar;
@@ -67,7 +68,12 @@ class _CleaningPageState extends State<CleaningPage> {
                     borderRadius: BorderRadius.circular(32.0),
                   ),
                 ),
-                onPressed: onFindNow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const FindServices()),
+                  );
+                },
                 child: const Text(
                   'Find Now',
                   style: TextStyle(fontSize: 12, color: Colors.white),
@@ -115,7 +121,12 @@ class _CleaningPageState extends State<CleaningPage> {
                 buildServiceBox(
                   icon: Icons.home_outlined,
                   title: 'Regular House\nCleaning',
-                  onFindNow: () => setState(() => _showSidebar = true),
+                  onFindNow: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const FindServices()),
+                    );
+                  },
                   onSchedule: () {},
                   borderColor: Colors.lightBlue,
                 ),
@@ -123,7 +134,12 @@ class _CleaningPageState extends State<CleaningPage> {
                 buildServiceBox(
                   icon: Icons.cleaning_services,
                   title: 'Deep\nCleaning',
-                  onFindNow: () => setState(() => _showSidebar = true),
+                  onFindNow: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const FindServices()),
+                    );
+                  },
                   onSchedule: () {},
                   borderColor: Colors.amber.shade800,
                 ),
@@ -135,7 +151,12 @@ class _CleaningPageState extends State<CleaningPage> {
                 buildServiceBox(
                   icon: Icons.bathroom,
                   title: 'Carpet\nCleaning',
-                  onFindNow: () => setState(() => _showSidebar = true),
+                  onFindNow: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const FindServices()),
+                    );
+                  },
                   onSchedule: () {},
                   borderColor: Colors.pink,
                 ),
@@ -143,7 +164,12 @@ class _CleaningPageState extends State<CleaningPage> {
                 buildServiceBox(
                   icon: Icons.window,
                   title: 'Window\nCleaning',
-                  onFindNow: () => setState(() => _showSidebar = true),
+                  onFindNow: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const FindServices()),
+                    );
+                  },
                   onSchedule: () {},
                   borderColor: Colors.teal,
                 ),
@@ -155,7 +181,12 @@ class _CleaningPageState extends State<CleaningPage> {
                 buildServiceBox(
                   icon: Icons.apartment,
                   title: 'Office\nCleaning',
-                  onFindNow: () => setState(() => _showSidebar = true),
+                  onFindNow: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const FindServices()),
+                    );
+                  },
                   onSchedule: () {},
                   borderColor: Colors.deepPurple,
                 ),
@@ -163,7 +194,12 @@ class _CleaningPageState extends State<CleaningPage> {
                 buildServiceBox(
                   icon: Icons.bathroom,
                   title: 'Bathroom\nCleaning',
-                  onFindNow: () => setState(() => _showSidebar = true),
+                  onFindNow: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const FindServices()),
+                    );
+                  },
                   onSchedule: () {},
                   borderColor: Colors.green,
                 ),
