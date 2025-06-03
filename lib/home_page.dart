@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int myIndex = 0;
-
+  // updated code
   // List of widgets for Bottom Navigation bar screens
   List<Widget> widgetList = const [
     Text('Home', style: TextStyle(fontSize: 40)),
