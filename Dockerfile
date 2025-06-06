@@ -1,13 +1,24 @@
-# Use Nginx to serve Flutter Web
+# Stage 1: Build the Flutter web app
+FROM ghcr.io/cirruslabs/flutter:stable AS build
+
+WORKDIR /app
+
+# Copy everything to the container
+COPY . .
+
+# Get dependencies
+RUN flutter pub get
+
+# Build the web app
+RUN flutter build web --release
+
+# Stage 2: Serve using NGINX
 FROM nginx:alpine
 
-# Remove default Nginx HTML content
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy Flutter web build files to Nginx directory
-COPY build/web /usr/share/nginx/html
+# Copy built files from previous stage
+COPY --from=build /app/build/web /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
 
-# Start Nginx (already CMD in base image)
+CMD ["nginx", "-g", "daemon off;"]
