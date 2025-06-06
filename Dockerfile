@@ -1,24 +1,26 @@
-# Stage 1: Build the Flutter web app
-FROM ghcr.io/cirruslabs/flutter:stable AS build
+# --- Build stage ---
+FROM cirrusci/flutter:stable AS build
 
 WORKDIR /app
-
-# Copy everything to the container
 COPY . .
 
-# Get dependencies
+# Enable web support and get dependencies
+RUN flutter channel stable && flutter upgrade
+RUN flutter config --enable-web
 RUN flutter pub get
 
-# Build the web app
-RUN flutter build web --release
+# Build the web release
+RUN flutter build web
 
-# Stage 2: Serve using NGINX
+# --- Serve stage ---
 FROM nginx:alpine
 
-# Copy built files from previous stage
+# Remove default nginx website
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy Flutter web build to nginx folder
 COPY --from=build /app/build/web /usr/share/nginx/html
 
-# Expose port 80
+# Expose port and start NGINX
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
