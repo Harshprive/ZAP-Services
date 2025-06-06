@@ -8,6 +8,7 @@ plugins {
 android {
     namespace = "com.example.zap_services"
     compileSdk = flutter.compileSdkVersion
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -29,6 +30,8 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
+
+    ndkVersion = "27.0.12077973"
 
     buildTypes {
         release {

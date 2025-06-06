@@ -52,15 +52,14 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
+            child: Container(
+              margin: const EdgeInsets.symmetric(
+                vertical: 2.0,
                 horizontal: 16.0,
-                vertical: 13.0,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 10), // Move the Row down
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -113,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.all(
-                                Radius.circular(24),
+                                Radius.circular(10),
                               ),
                             ),
                             hintText: 'Search cleaning',
@@ -126,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   Card(
-                    margin: EdgeInsets.all(16),
+                    margin: EdgeInsets.only(left: 16, right: 16, top: 60.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -147,8 +146,8 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             'Arriving services',
                             style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey[600],
+                              fontSize: 12,
+                              color: Colors.grey[700],
                             ),
                           ),
                           //SizedBox(height: 10),
@@ -156,19 +155,19 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Image.asset(
-                                'assets/services.png',
+                                'assets/services.PNG',
                                 width: 90,
                                 height: 90,
                               ),
                               SizedBox(width: 12),
                               Image.asset(
-                                'assets/services.png',
+                                'assets/services.PNG',
                                 width: 90,
                                 height: 90,
                               ),
                               SizedBox(width: 12),
                               Image.asset(
-                                'assets/services.png',
+                                'assets/services.PNG',
                                 width: 90,
                                 height: 90,
                               ),
@@ -180,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   //SizedBox(height: 10.0),
                   SizedBox(
-                    height: 300.0,
+                    height: 278.0,
                     child: Card(
                       margin: EdgeInsets.all(16),
                       shape: RoundedRectangleBorder(
@@ -195,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'Our services',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -203,11 +202,11 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'Avail one or multiple services in your booking',
                               style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey[600],
+                                fontSize: 12,
+                                color: Colors.grey[700],
                               ),
                             ),
-                            SizedBox(height: 10),
+                            SizedBox(height: 5),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -216,29 +215,31 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 70,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
                                         255,
-                                        196,
-                                        176,
-                                        69,
+                                        255,
+                                        154,
+                                        162,
                                       ),
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
                                       children: [
                                         Image.asset(
                                           'assets/airconditioner.png',
                                           height: 45,
+                                          color: Colors.black,
                                         ),
                                         const Text(
                                           'AC Cool',
@@ -254,49 +255,16 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
+                                        builder:
+                                            (_) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                      color: const Color.fromARGB(
-                                        255,
-                                        255,
-                                        154,
-                                        162,
-                                      ),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          'assets/cooking.png',
-                                          height: 45,
-                                        ),
-                                        const Text(
-                                          'Cooking',
-                                          style: TextStyle(fontSize: 10),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                // SizedBox(width: 5.0),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
-                                      ),
-                                    );
-                                  },
-                                  child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 70,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
                                         255,
@@ -309,8 +277,49 @@ class _HomePageState extends State<HomePage> {
                                     child: Column(
                                       children: [
                                         Image.asset(
+                                          'assets/cooking.png',
+                                          height: 45,
+                                          color: Colors.black,
+                                        ),
+                                        const Text(
+                                          'Cooking',
+                                          style: TextStyle(fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 5.0),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 70,
+                                    height: 70,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                        255,
+                                        255,
+                                        209,
+                                        102,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
                                           'assets/painter.png',
                                           height: 45,
+                                          color: Colors.black,
                                         ),
                                         const Text(
                                           'Painter',
@@ -327,27 +336,31 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 70,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
                                         255,
-                                        255,
-                                        214,
-                                        102,
+                                        184,
+                                        233,
+                                        134,
                                       ),
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                     child: Column(
                                       children: [
                                         Image.asset(
-                                          'assets/plumber.png',
+                                          'assets/plumbing.png',
                                           height: 45,
+                                          color: Colors.black,
                                         ),
                                         const Text(
                                           'Plumber',
@@ -368,19 +381,22 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
+                                        builder:
+                                            (_) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 70,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
                                         255,
-                                        184,
-                                        233,
-                                        134,
+                                        255,
+                                        195,
+                                        160,
                                       ),
                                       borderRadius: BorderRadius.circular(15),
                                     ),
@@ -389,6 +405,7 @@ class _HomePageState extends State<HomePage> {
                                         Image.asset(
                                           'assets/airconditioner.png',
                                           height: 45,
+                                          color: Colors.black,
                                         ),
                                         const Text(
                                           'AC Cool',
@@ -404,19 +421,23 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 70,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
                                         255,
+
+                                        160,
                                         255,
                                         195,
-                                        160,
                                       ),
                                       borderRadius: BorderRadius.circular(15),
                                     ),
@@ -425,6 +446,7 @@ class _HomePageState extends State<HomePage> {
                                         Image.asset(
                                           'assets/cooking.png',
                                           height: 45,
+                                          color: Colors.black,
                                         ),
                                         const Text(
                                           'Cooking',
@@ -440,19 +462,22 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 70,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
                                         255,
-                                        160,
-                                        196,
                                         255,
+                                        223,
+                                        211,
                                       ),
                                       borderRadius: BorderRadius.circular(15),
                                     ),
@@ -461,6 +486,7 @@ class _HomePageState extends State<HomePage> {
                                         Image.asset(
                                           'assets/painter.png',
                                           height: 45,
+                                          color: Colors.black,
                                         ),
                                         const Text(
                                           'Painter',
@@ -477,27 +503,31 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CleaningPage(),
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width: 60,
-                                    height: 60,
+                                    width: 70,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
                                         255,
-                                        223,
-                                        211,
-                                        211,
+                                        69,
+                                        196,
+                                        176,
                                       ),
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                     child: Column(
                                       children: [
                                         Image.asset(
-                                          'assets/plumber.png',
+                                          'assets/plumbing.png',
                                           height: 45,
+                                          color: Colors.black,
                                         ),
                                         const Text(
                                           'Plumber',
@@ -531,7 +561,8 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'Recommendation',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 14,
+                                color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -539,116 +570,172 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'These are the most booking services',
                               style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey[600],
+                                fontSize: 12,
+                                color: Colors.grey[700],
                               ),
                             ),
                             SizedBox(height: 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
-                                  width: 60,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(
-                                      255,
-                                      223,
-                                      211,
-                                      211,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 70,
+                                    height: 70,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                        255,
+                                        184,
+                                        233,
+                                        134,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
                                     ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'assets/airconditioner.png',
-                                        height: 45,
-                                      ),
-                                      const Text(
-                                        'AC Cool',
-                                        style: TextStyle(fontSize: 10),
-                                      ),
-                                    ],
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          'assets/airconditioner.png',
+                                          height: 45,
+                                          color: Colors.black,
+                                        ),
+                                        const Text(
+                                          'AC Cool',
+                                          style: TextStyle(fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 SizedBox(width: 5.0),
-                                Container(
-                                  width: 60,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(
-                                      255,
-                                      255,
-                                      154,
-                                      162,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 70,
+                                    height: 70,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                        255,
+                                        255,
+                                        195,
+                                        170,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
                                     ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'assets/cooking.png',
-                                        height: 45,
-                                      ),
-                                      const Text(
-                                        'Cooking',
-                                        style: TextStyle(fontSize: 10),
-                                      ),
-                                    ],
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          'assets/cooking.png',
+                                          height: 45,
+                                          color: Colors.black,
+                                        ),
+                                        const Text(
+                                          'Cooking',
+                                          style: TextStyle(fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                                // SizedBox(width: 5.0),
-                                Container(
-                                  width: 60,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(
-                                      255,
-                                      255,
-                                      214,
-                                      102,
+                                SizedBox(width: 5.0),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 70,
+                                    height: 70,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                        255,
+                                        170,
+                                        196,
+                                        255,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
                                     ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'assets/painter.png',
-                                        height: 45,
-                                      ),
-                                      const Text(
-                                        'Painter',
-                                        style: TextStyle(fontSize: 10),
-                                      ),
-                                    ],
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          'assets/painter.png',
+                                          height: 45,
+                                          color: Colors.black,
+                                        ),
+                                        const Text(
+                                          'Painter',
+                                          style: TextStyle(fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 SizedBox(width: 5.0),
 
-                                Container(
-                                  width: 60,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(
-                                      255,
-                                      69,
-                                      196,
-                                      176,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => const CleaningPage(
+                                              showSidebar: true,
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 70,
+                                    height: 70,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                        255,
+                                        223,
+                                        211,
+                                        211,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
                                     ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'assets/plumber.png',
-                                        height: 45,
-                                      ),
-                                      const Text(
-                                        'Plumber',
-                                        style: TextStyle(fontSize: 10),
-                                      ),
-                                    ],
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          'assets/plumbing.png',
+                                          height: 45,
+                                          color: Colors.black,
+                                        ),
+                                        const Text(
+                                          'Plumber',
+                                          style: TextStyle(fontSize: 10),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
