@@ -423,6 +423,7 @@ class _CleaningPageState extends State<CleaningPage> {
       ),
       body: Stack(
         children: [
+          // Background and content
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -456,7 +457,12 @@ class _CleaningPageState extends State<CleaningPage> {
               ),
             ),
           ),
-          if (_showSidebar) buildSidebar(),
+
+          // Ensure sidebar doesn't block navigation
+          IgnorePointer(
+            ignoring: !_showSidebar,
+            child: _showSidebar ? buildSidebar() : Container(),
+          ),
         ],
       ),
     );
