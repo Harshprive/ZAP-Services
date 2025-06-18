@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:zap_services/find_services.dart';
 
+// new code
 class CleaningPage extends StatefulWidget {
   final bool showSidebar;
   const CleaningPage({super.key, this.showSidebar = false});
@@ -10,7 +11,6 @@ class CleaningPage extends StatefulWidget {
   State<CleaningPage> createState() => _CleaningPageState();
 }
 
-// This is the updated code today
 class _CleaningPageState extends State<CleaningPage> {
   bool _showSidebar = false;
   String? selectedWeek;
@@ -423,6 +423,7 @@ class _CleaningPageState extends State<CleaningPage> {
       ),
       body: Stack(
         children: [
+          // Background and content
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -456,7 +457,12 @@ class _CleaningPageState extends State<CleaningPage> {
               ),
             ),
           ),
-          if (_showSidebar) buildSidebar(),
+
+          // Ensure sidebar doesn't block navigation
+          IgnorePointer(
+            ignoring: !_showSidebar,
+            child: _showSidebar ? buildSidebar() : Container(),
+          ),
         ],
       ),
     );

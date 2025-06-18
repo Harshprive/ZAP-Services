@@ -5,15 +5,15 @@ void main() {
   runApp(const MyApp());
 }
 
+// new code
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This is the updated code today date
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),

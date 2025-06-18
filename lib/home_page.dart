@@ -14,12 +14,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int myIndex = 0;
-
+  // // new code
   // List of widgets for Bottom Navigation bar screens
   List<Widget> widgetList = const [
     Text('Home', style: TextStyle(fontSize: 40)),
     Text('Bookings', style: TextStyle(fontSize: 40)),
-    Text('Categories', style: TextStyle(fontSize: 40)),
+    //Text('Categories', style: TextStyle(fontSize: 40)),
     Text('Chat', style: TextStyle(fontSize: 40)),
     Text('Profile', style: TextStyle(fontSize: 40)),
   ];
@@ -236,9 +236,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/airconditioner.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -276,9 +278,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/cooking.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -316,9 +320,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/painter.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -357,9 +363,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/plumbing.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -402,9 +410,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/airconditioner.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -443,9 +453,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/cooking.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -483,9 +495,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/painter.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -524,9 +538,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/plumbing.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -604,9 +620,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/airconditioner.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -644,9 +662,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/cooking.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -684,9 +704,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/painter.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -725,9 +747,11 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 5),
                                         Image.asset(
                                           'assets/plumbing.png',
-                                          height: 45,
+                                          height: 40,
+                                          width: 40,
                                           color: Colors.black,
                                         ),
                                         const Text(
@@ -786,27 +810,27 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 IconBottomBar(
-                  text: 'Booking',
-                  icon: Icons.book_online_outlined,
+                  text: 'Issue',
+                  icon: Icons.messenger_outline_rounded,
                   color: const Color.fromARGB(255, 192, 192, 193),
                   selected: true,
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Booking()),
+                      MaterialPageRoute(builder: (context) => const Issue()),
                     );
                   },
                 ),
 
                 IconBottomBar(
-                  text: 'Chat',
-                  icon: Icons.messenger_outline,
+                  text: 'Booking',
+                  icon: Icons.book_online_outlined,
                   color: const Color.fromARGB(255, 192, 192, 193),
                   selected: false,
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Issue()),
+                      MaterialPageRoute(builder: (context) => const Booking()),
                     );
                   },
                 ),
