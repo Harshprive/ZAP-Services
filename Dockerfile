@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Use the official Dart image
 FROM dart:stable AS build
 
@@ -27,25 +26,18 @@ RUN flutter build web
 
 # Stage for serving web content with a lightweight web server
 FROM nginx:alpine
-COPY --from=build /app/build/web /usr/share/nginx/html
 
-# Expose the port
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
-=======
-# Use Nginx to serve Flutter Web
-FROM nginx:alpine
 
 # Remove default Nginx HTML content
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy Flutter web build files to Nginx directory
-COPY build/web /usr/share/nginx/html
+COPY --from=build /app/build/web /usr/share/nginx/html
+
+
 
 # Expose port 80
 EXPOSE 80
 
 # Start Nginx (already CMD in base image)
->>>>>>> mayurdev
+CMD ["nginx", "-g", "deamon off;"]
