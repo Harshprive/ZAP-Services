@@ -44,4 +44,3 @@ CMD ["nginx", "-g", "daemon off;"]
 
 
 
->>>>>>> 3a2efa75ef7dabb5e1fc02c57662c11b7fa76644
