@@ -35,9 +35,13 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build /app/build/web /usr/share/nginx/html
 
 
-
-# Expose port 80
+# Expose the port
 EXPOSE 80
 
-# Start Nginx (already CMD in base image)
+
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
+
+
+
+>>>>>>> 3a2efa75ef7dabb5e1fc02c57662c11b7fa76644
